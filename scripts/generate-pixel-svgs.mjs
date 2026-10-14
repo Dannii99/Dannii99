@@ -17,32 +17,39 @@ const ASSETS_DIR = join(__dirname, "..", "assets");
 mkdirSync(ASSETS_DIR, { recursive: true });
 
 // ---------------------------------------------------------------------------
-// Palette — only these 5 colors are allowed anywhere in the generated SVGs.
+// Palette — vivid blue/purple/cyan/pink neon on a near-black (or near-white)
+// base. All four accents clear 4.5:1+ against the dark bg, so they can be
+// used directly as pixel-text color on dark. On the light bg they drop
+// below AA as text, so light-variant text always uses DARK_INK and the
+// accents stay fills-only there (chips/badges/buttons).
 // ---------------------------------------------------------------------------
 const PALETTE = {
-  bgDark: "#0F0E0C",
-  bgLight: "#EDE6D6",
-  accent: "#FF5A1F",
-  secondary: "#C6F432",
-  border: "#3A3833",
+  bgDark: "#0B0B18",
+  bgLight: "#F3F1FF",
+  blue: "#3D8BFF",
+  purple: "#9D4EFF",
+  cyan: "#2EE6D6",
+  pink: "#FF4FD8",
+  borderDark: "#3A3570",
+  borderLight: "#C9C3EC",
 };
+const ACCENTS = [PALETTE.blue, PALETTE.purple, PALETTE.cyan, PALETTE.pink];
+const LIGHT_INK = "#F1EEFB";
+const DARK_INK = "#120F26";
+// Ink to use for text sitting on top of an accent-filled chip/button —
+// always dark, since all four accents are bright enough for AA against
+// dark ink but not against light ink.
+const CHIP_INK = DARK_INK;
 
-// Text ("ink") color choice is the one thing that must change between
-// variants to keep AA contrast: EDE6D6-on-#0F0E0C and #0F0E0C-on-#EDE6D6
-// both clear 15:1+. Accent/secondary are ~6:1 and ~15:1 on the DARK bg
-// (fine as text there) but drop to ~2.5:1 on the LIGHT bg (fails AA as
-// text) — so on light they're used only as fills behind dark-ink text
-// (chips/buttons/badges), never as text color directly on the page bg.
 function ink(variant) {
-  return variant === "dark" ? PALETTE.bgLight : PALETTE.bgDark;
+  return variant === "dark" ? LIGHT_INK : DARK_INK;
 }
 function bg(variant) {
   return variant === "dark" ? PALETTE.bgDark : PALETTE.bgLight;
 }
-// Ink to use for text sitting on top of an accent/secondary-filled chip —
-// always the dark color, since both fills are bright enough for AA against
-// dark ink but not against light ink.
-const CHIP_INK = PALETTE.bgDark;
+function borderColor(variant) {
+  return variant === "dark" ? PALETTE.borderDark : PALETTE.borderLight;
+}
 
 // ---------------------------------------------------------------------------
 // 5x7 bitmap font. Each glyph is 7 rows of 5 bits ('1' = pixel on).
@@ -102,10 +109,14 @@ function measureText(text, scale, spacing = 1) {
   return n * 5 * scale + Math.max(0, n - 1) * spacing * scale;
 }
 
-function pixelText(text, x, y, scale, color, { spacing = 1 } = {}) {
+// colorOrFn: a single fill color, or (index, char) => color for per-glyph
+// coloring (used for the neon "rainbow" cycling titles).
+function pixelText(text, x, y, scale, colorOrFn, { spacing = 1 } = {}) {
   const rects = [];
   let cursorX = x;
+  let i = 0;
   for (const ch of text.toUpperCase()) {
+    const color = typeof colorOrFn === "function" ? colorOrFn(i, ch) : colorOrFn;
     const glyph = FONT[ch] ?? FONT[" "];
     for (let row = 0; row < 7; row++) {
       const bits = glyph[row];
@@ -118,24 +129,42 @@ function pixelText(text, x, y, scale, color, { spacing = 1 } = {}) {
       }
     }
     cursorX += (5 + spacing) * scale;
+    i++;
   }
   return rects.join("");
 }
 
-function pixelTextCentered(text, centerXpos, y, scale, color, opts = {}) {
+function pixelTextCentered(text, centerXpos, y, scale, colorOrFn, opts = {}) {
   const w = measureText(text, scale, opts.spacing ?? 1);
-  return pixelText(text, centerXpos - w / 2, y, scale, color, opts);
+  return pixelText(text, centerXpos - w / 2, y, scale, colorOrFn, opts);
+}
+
+// Accents only clear AA as *text* color against the dark bg (~4.7:1+). On
+// the light bg they drop to ~2.5:1, so any text drawn straight on the page
+// background must fall back to plain ink there — accents stay fills-only.
+function accentOrInk(variant, accent) {
+  return variant === "dark" ? accent : ink(variant);
+}
+function cycleAccentOrInk(variant, colors) {
+  return (i) => accentOrInk(variant, colors[i % colors.length]);
+}
+
+function glow(markup) {
+  return `<g filter="url(#${GLOW_FILTER_ID})">${markup}</g>`;
 }
 
 // ---------------------------------------------------------------------------
-// Shared decoration: scanlines + outer frame
+// Shared decoration: defs (glow filter), scanlines, outer frame
 // ---------------------------------------------------------------------------
+const GLOW_FILTER_ID = "neonGlow";
+const DEFS_BLOCK = `<defs><filter id="${GLOW_FILTER_ID}" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+
 function scanlines(width, height, variant) {
   const lines = [];
   for (let y = 0; y < height; y += 4) {
-    lines.push(`<rect x="0" y="${y}" width="${width}" height="1" fill="${PALETTE.border}"/>`);
+    lines.push(`<rect x="0" y="${y}" width="${width}" height="1" fill="${borderColor(variant)}"/>`);
   }
-  return `<g class="scanlines" opacity="${variant === "dark" ? 0.07 : 0.1}">${lines.join("")}</g>`;
+  return `<g class="scanlines" opacity="${variant === "dark" ? 0.06 : 0.08}">${lines.join("")}</g>`;
 }
 
 function frame(width, height, color, strokeWidth = 4) {
@@ -147,7 +176,7 @@ const STYLE_BLOCK = `
   .blink { animation: blink 1.1s steps(2, start) infinite; }
   @keyframes blink { to { visibility: hidden; } }
   .scanlines { animation: flicker 6s linear infinite; }
-  @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+  @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
   @media (prefers-reduced-motion: reduce) {
     .blink { animation: none; }
     .scanlines { animation: none; }
@@ -158,10 +187,11 @@ function svgDocument({ width, height, variant, title, body }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(title)}">
 <title>${escapeXml(title)}</title>
 <style>${STYLE_BLOCK}</style>
+${DEFS_BLOCK}
 <rect x="0" y="0" width="${width}" height="${height}" fill="${bg(variant)}"/>
 ${body}
 ${scanlines(width, height, variant)}
-${frame(width, height, PALETTE.border)}
+${frame(width, height, borderColor(variant))}
 </svg>`;
 }
 
@@ -184,15 +214,15 @@ function write(name, variant, svg) {
 // ---------------------------------------------------------------------------
 function buildHero(variant) {
   const width = 840;
-  const height = 320;
+  const height = 340;
   const textColor = ink(variant);
   const cx = width / 2;
 
   const body = [
     pixelTextCentered("DANNY OSPINO", cx, 90, 6, textColor),
-    pixelTextCentered("FRONTEND AI ARCHITECT", cx, 150, 3, PALETTE.accent),
-    `<rect x="${cx - 160}" y="190" width="320" height="2" fill="${PALETTE.secondary}"/>`,
-    `<g class="blink">${pixelTextCentered("PRESS START", cx, 230, 4, PALETTE.secondary)}</g>`,
+    glow(pixelTextCentered("FRONTEND AI ARCHITECT", cx, 160, 3, cycleAccentOrInk(variant, ACCENTS))),
+    `<rect x="${cx - 160}" y="200" width="320" height="2" fill="${PALETTE.purple}"/>`,
+    glow(`<g class="blink">${pixelTextCentered("PRESS START", cx, 245, 4, accentOrInk(variant, PALETTE.cyan))}</g>`),
   ].join("\n");
 
   return svgDocument({
@@ -205,7 +235,7 @@ function buildHero(variant) {
 }
 
 // ---------------------------------------------------------------------------
-// QUESTS — project cartridges
+// QUESTS — project cartridges, one per row, full width
 // ---------------------------------------------------------------------------
 const QUESTS = [
   { slug: "quest-ai-arch", name: "FRONTEND AI ARCH", chips: ["SH", "MD", "AI"] },
@@ -215,30 +245,31 @@ const QUESTS = [
 ];
 
 function buildQuest(quest, variant, accentColor) {
-  const width = 400;
-  const height = 220;
+  const width = 840;
+  const height = 260;
   const textColor = ink(variant);
   const cx = width / 2;
 
-  const chipWidth = 56;
-  const chipHeight = 26;
-  const chipGap = 14;
+  const chipWidth = 90;
+  const chipHeight = 40;
+  const chipGap = 20;
   const totalChipsWidth = quest.chips.length * chipWidth + (quest.chips.length - 1) * chipGap;
   let chipX = cx - totalChipsWidth / 2;
   const chipRects = quest.chips
     .map((label) => {
-      const rect = `<rect x="${chipX}" y="150" width="${chipWidth}" height="${chipHeight}" fill="${accentColor}"/>`;
-      const label2 = pixelTextCentered(label, chipX + chipWidth / 2, 158, 2, CHIP_INK);
+      const rect = `<rect x="${chipX}" y="175" width="${chipWidth}" height="${chipHeight}" fill="${accentColor}"/>`;
+      const label2 = pixelTextCentered(label, chipX + chipWidth / 2, 185, 3, CHIP_INK);
       chipX += chipWidth + chipGap;
       return rect + label2;
     })
     .join("\n");
 
   const body = [
-    `<rect x="16" y="16" width="${width - 32}" height="10" fill="${accentColor}"/>`,
-    pixelTextCentered(quest.name, cx, 60, 2.6, textColor),
-    `<rect x="${cx - 100}" y="110" width="200" height="2" fill="${accentColor}"/>`,
+    `<rect x="20" y="20" width="${width - 40}" height="12" fill="${accentColor}"/>`,
+    glow(pixelTextCentered(quest.name, cx, 75, 5, textColor)),
+    `<rect x="${cx - 160}" y="145" width="320" height="2" fill="${accentColor}"/>`,
     chipRects,
+    `<rect x="12" y="12" width="${width - 24}" height="${height - 24}" fill="none" stroke="${accentColor}" stroke-width="3"/>`,
   ].join("\n");
 
   return svgDocument({
@@ -262,19 +293,19 @@ const ACHIEVEMENTS = [
 
 function buildAchievements(variant) {
   const width = 840;
-  const height = 150;
+  const height = 170;
   const textColor = ink(variant);
-  const nodeY = 45;
+  const nodeY = 50;
   const colWidth = width / ACHIEVEMENTS.length;
 
-  const line = `<rect x="${colWidth / 2}" y="${nodeY}" width="${width - colWidth}" height="2" fill="${PALETTE.border}"/>`;
+  const line = `<rect x="${colWidth / 2}" y="${nodeY}" width="${width - colWidth}" height="2" fill="${borderColor(variant)}"/>`;
 
   const nodes = ACHIEVEMENTS.map((item, i) => {
     const cx = colWidth * i + colWidth / 2;
-    const accent = i % 2 === 0 ? PALETTE.accent : PALETTE.secondary;
-    const badge = `<rect x="${cx - 8}" y="${nodeY - 8}" width="16" height="16" fill="${accent}"/>`;
-    const l1 = pixelTextCentered(item.line1, cx, 80, 2, textColor);
-    const l2 = pixelTextCentered(item.line2, cx, 100, 2, accent === PALETTE.accent ? PALETTE.accent : PALETTE.secondary);
+    const accent = ACCENTS[i % ACCENTS.length];
+    const badge = glow(`<rect x="${cx - 10}" y="${nodeY - 10}" width="20" height="20" fill="${accent}"/>`);
+    const l1 = pixelTextCentered(item.line1, cx, 90, 2, textColor);
+    const l2 = pixelTextCentered(item.line2, cx, 112, 2, accentOrInk(variant, accent));
     return badge + l1 + l2;
   }).join("\n");
 
@@ -296,17 +327,17 @@ const CONTACTS = ["LINKEDIN", "EMAIL", "GITHUB"];
 
 function buildSavePoint(variant) {
   const width = 840;
-  const height = 110;
-  const btnWidth = 220;
-  const btnHeight = 50;
-  const gap = 30;
+  const height = 120;
+  const btnWidth = 230;
+  const btnHeight = 54;
+  const gap = 35;
   const totalWidth = CONTACTS.length * btnWidth + (CONTACTS.length - 1) * gap;
   let x = (width - totalWidth) / 2;
 
   const buttons = CONTACTS.map((label, i) => {
-    const accent = i % 2 === 0 ? PALETTE.accent : PALETTE.secondary;
-    const rect = `<rect x="${x}" y="30" width="${btnWidth}" height="${btnHeight}" fill="${accent}"/>`;
-    const text = pixelTextCentered(label, x + btnWidth / 2, 30 + btnHeight / 2 - 7, 3, CHIP_INK);
+    const accent = ACCENTS[i % ACCENTS.length];
+    const rect = glow(`<rect x="${x}" y="33" width="${btnWidth}" height="${btnHeight}" fill="${accent}"/>`);
+    const text = pixelTextCentered(label, x + btnWidth / 2, 33 + btnHeight / 2 - 7, 3, CHIP_INK);
     x += btnWidth + gap;
     return rect + text;
   }).join("\n");
@@ -339,22 +370,22 @@ function drawBitmap(mask, x, y, scale, color) {
 
 const CATEGORY_ICONS = {
   "icon-frontend": {
-    color: PALETTE.accent,
+    color: PALETTE.blue,
     mask: ["11111111", "10000001", "10000001", "11111111", "10000001", "10000001", "10000001", "11111111"],
     title: "Frontend",
   },
   "icon-state": {
-    color: PALETTE.secondary,
+    color: PALETTE.purple,
     mask: ["00011000", "00111100", "01100110", "11000011", "11000011", "01100110", "00111100", "00011000"],
     title: "Estado y Reactividad",
   },
   "icon-ai": {
-    color: PALETTE.accent,
+    color: PALETTE.cyan,
     mask: ["00011000", "00011000", "00011000", "11111111", "11111111", "00011000", "00011000", "00011000"],
     title: "IA y Tooling",
   },
   "icon-testing": {
-    color: PALETTE.secondary,
+    color: PALETTE.pink,
     mask: ["00000000", "00000001", "00000011", "10000110", "11001100", "01111000", "00110000", "00000000"],
     title: "Testing y Calidad",
   },
@@ -381,8 +412,7 @@ for (const [name, def] of Object.entries(CATEGORY_ICONS)) {
 for (const variant of ["dark", "light"]) {
   write("hero", variant, buildHero(variant));
   QUESTS.forEach((quest, i) => {
-    const accentColor = i % 2 === 0 ? PALETTE.accent : PALETTE.secondary;
-    write(quest.slug, variant, buildQuest(quest, variant, accentColor));
+    write(quest.slug, variant, buildQuest(quest, variant, ACCENTS[i % ACCENTS.length]));
   });
   write("achievements", variant, buildAchievements(variant));
   write("save-point", variant, buildSavePoint(variant));
