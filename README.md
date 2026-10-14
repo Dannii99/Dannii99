@@ -39,7 +39,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 <summary><img src="assets/icon-frontend.svg" width="16" height="16" alt=""> &nbsp;<strong>FRONTEND</strong></summary>
 <br>
 
-![Angular, TypeScript, HTML, CSS, Sass](https://skillicons.dev/icons?i=angular,ts,html,css,sass)
+<img src="https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white" alt="Angular" height="28"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" height="28"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript" height="28"> <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5" height="28"> <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css&logoColor=white" alt="CSS3" height="28"> <img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass" height="28"> <img src="https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=white" alt="jQuery" height="28"> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React" height="28"> <img src="https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=white" alt="Vue.js" height="28"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap" height="28"> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" height="28">
 
 </details>
 
@@ -47,8 +47,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 <summary><img src="assets/icon-state.svg" width="16" height="16" alt=""> &nbsp;<strong>ESTADO &amp; REACTIVIDAD</strong></summary>
 <br>
 
-![RxJS](https://skillicons.dev/icons?i=reactivex)
-`Signals` · `NgRx` · `RxJS`
+<img src="https://img.shields.io/badge/Signals-2EE6D6?logoColor=white" alt="Signals" height="28"> <img src="https://img.shields.io/badge/NgRx-BA2BD2?logo=ngrx&logoColor=white" alt="NgRx" height="28"> <img src="https://img.shields.io/badge/RxJS-B7178C?logo=reactivex&logoColor=white" alt="RxJS" height="28">
 
 </details>
 
@@ -56,8 +55,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 <summary><img src="assets/icon-ai.svg" width="16" height="16" alt=""> &nbsp;<strong>IA &amp; TOOLING</strong></summary>
 <br>
 
-![Git, Bash, VS Code](https://skillicons.dev/icons?i=git,bash,vscode)
-`Spec-Driven Development` · `OpenSpec` · `Agent Skills`
+<img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" alt="Git" height="28"> <img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white" alt="Bash" height="28"> <img src="https://img.shields.io/badge/VS_Code-007ACC?logo=visualstudiocode&logoColor=white" alt="VS Code" height="28"> <img src="https://img.shields.io/badge/OpenSpec-9D4EFF?logoColor=white" alt="OpenSpec" height="28"> <img src="https://img.shields.io/badge/Agent_Skills-3D8BFF?logoColor=white" alt="Agent Skills" height="28"> <img src="https://img.shields.io/badge/Spec--Driven_Development-FF4FD8?logoColor=white" alt="Spec-Driven Development" height="28">
 
 </details>
 
@@ -65,7 +63,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 <summary><img src="assets/icon-testing.svg" width="16" height="16" alt=""> &nbsp;<strong>TESTING &amp; CALIDAD</strong></summary>
 <br>
 
-`Playwright` · `Accesibilidad WCAG` · `Clean Code`
+<img src="https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white" alt="Playwright" height="28"> <img src="https://img.shields.io/badge/Accesibilidad_WCAG-3D8BFF?logoColor=white" alt="Accesibilidad WCAG" height="28"> <img src="https://img.shields.io/badge/Clean_Code-9D4EFF?logoColor=white" alt="Clean Code" height="28">
 
 </details>
 
@@ -113,12 +111,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 ## SAVE POINT
 
 <p align="center">
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/save-point-light.svg">
-  <img src="assets/save-point-dark.svg" alt="Botones de contacto: LinkedIn, Email, GitHub" width="840">
-</picture>
-</p>
-
-<p align="center">
-<a href="https://www.linkedin.com/in/danny-ospino-82360b211/">LinkedIn</a> · <a href="mailto:dannii.ospino@gmail.com">Email</a> · <a href="https://github.com/Dannii99">GitHub</a>
+<a href="https://www.linkedin.com/in/danny-ospino-82360b211/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:dannii.ospino@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+<a href="https://github.com/Dannii99" target="_blank"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 </p>

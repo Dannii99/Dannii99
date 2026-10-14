@@ -36,10 +36,6 @@ const PALETTE = {
 const ACCENTS = [PALETTE.blue, PALETTE.purple, PALETTE.cyan, PALETTE.pink];
 const LIGHT_INK = "#F1EEFB";
 const DARK_INK = "#120F26";
-// Ink to use for text sitting on top of an accent-filled chip/button —
-// always dark, since all four accents are bright enough for AA against
-// dark ink but not against light ink.
-const CHIP_INK = DARK_INK;
 
 function ink(variant) {
   return variant === "dark" ? LIGHT_INK : DARK_INK;
@@ -274,37 +270,6 @@ function buildAchievements(variant) {
 }
 
 // ---------------------------------------------------------------------------
-// SAVE POINT — contact buttons
-// ---------------------------------------------------------------------------
-const CONTACTS = ["LINKEDIN", "EMAIL", "GITHUB"];
-
-function buildSavePoint(variant) {
-  const width = 840;
-  const height = 120;
-  const btnWidth = 230;
-  const btnHeight = 54;
-  const gap = 35;
-  const totalWidth = CONTACTS.length * btnWidth + (CONTACTS.length - 1) * gap;
-  let x = (width - totalWidth) / 2;
-
-  const buttons = CONTACTS.map((label, i) => {
-    const accent = ACCENTS[i % ACCENTS.length];
-    const rect = glow(`<rect x="${x}" y="33" width="${btnWidth}" height="${btnHeight}" fill="${accent}"/>`);
-    const text = pixelTextCentered(label, x + btnWidth / 2, 33 + btnHeight / 2 - 7, 3, CHIP_INK);
-    x += btnWidth + gap;
-    return rect + text;
-  }).join("\n");
-
-  return svgDocument({
-    width,
-    height,
-    variant,
-    title: "Save point: LinkedIn, Email, GitHub",
-    body: buttons,
-  });
-}
-
-// ---------------------------------------------------------------------------
 // INVENTORY — small category icons (transparent bg, no dark/light variant
 // needed since they carry no background rect — only accent-colored pixels).
 // ---------------------------------------------------------------------------
@@ -365,7 +330,6 @@ for (const [name, def] of Object.entries(CATEGORY_ICONS)) {
 for (const variant of ["dark", "light"]) {
   write("hero", variant, buildHero(variant));
   write("achievements", variant, buildAchievements(variant));
-  write("save-point", variant, buildSavePoint(variant));
 }
 
 console.log("Done.");
