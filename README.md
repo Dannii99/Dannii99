@@ -96,14 +96,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 ## BONUS STAGE
 
 <p align="center">
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/office-light.svg">
-  <img src="assets/office-dark.svg" alt="Escena pixel animada de oficina nocturna: Danny programando frente al monitor, con café, planta y ventana con estrellas" width="840">
-</picture>
-</p>
-
-<p align="center">
-Así se ve mi escritorio a las 2am. No significa nada, solo se veía bonito.
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:3D8BFF,35:9D4EFF,70:2EE6D6,100:FF4FD8&text=BONUS%20STAGE&fontColor=120F26&fontSize=60&animation=fadeIn" alt="Banner animado de ola con degradado azul, morado, cyan y rosa, con el texto BONUS STAGE" width="840">
 </p>
 
 <br>
