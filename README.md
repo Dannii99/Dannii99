@@ -11,6 +11,30 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 
 <br>
 
+## SCOREBOARD
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Dannii99&show_icons=true&count_private=true&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&icon_color=9D4EFF&text_color=F1EEFB&border_color=3A3570" alt="Estadísticas de GitHub de Dannii99" width="48%" />
+<img src="https://streak-stats.demolab.com/?user=Dannii99&hide_border=true&background=0B0B18&ring=3D8BFF&fire=FF4FD8&currStreakLabel=2EE6D6&sideLabels=9D4EFF&currStreakNum=F1EEFB&sideNums=F1EEFB&dates=9D4EFF&border=3A3570" alt="Racha de contribuciones de Dannii99" width="48%" />
+</p>
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dannii99&layout=compact&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570" alt="Lenguajes más usados por Dannii99" width="60%" />
+</p>
+
+<br>
+
+## REPLAY
+
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-light.svg">
+  <img src="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-dark.svg" alt="Animación de la serpiente recorriendo el mapa de contribuciones de GitHub" width="840" />
+</picture>
+</p>
+
+<br>
+
 ## QUESTS
 
 <table>
@@ -66,38 +90,6 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 <img src="https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white" alt="Playwright" height="28"> <img src="https://img.shields.io/badge/Accesibilidad_WCAG-3D8BFF?logoColor=white" alt="Accesibilidad WCAG" height="28"> <img src="https://img.shields.io/badge/Clean_Code-9D4EFF?logoColor=white" alt="Clean Code" height="28">
 
 </details>
-
-<br>
-
-## SCOREBOARD
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=Dannii99&show_icons=true&count_private=true&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&icon_color=9D4EFF&text_color=F1EEFB&border_color=3A3570" alt="Estadísticas de GitHub de Dannii99" width="48%" />
-<img src="https://streak-stats.demolab.com/?user=Dannii99&hide_border=true&background=0B0B18&ring=3D8BFF&fire=FF4FD8&currStreakLabel=2EE6D6&sideLabels=9D4EFF&currStreakNum=F1EEFB&sideNums=F1EEFB&dates=9D4EFF&border=3A3570" alt="Racha de contribuciones de Dannii99" width="48%" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dannii99&layout=compact&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570" alt="Lenguajes más usados por Dannii99" width="60%" />
-</p>
-
-<br>
-
-## REPLAY
-
-<p align="center">
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-light.svg">
-  <img src="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-dark.svg" alt="Animación de la serpiente recorriendo el mapa de contribuciones de GitHub" width="840" />
-</picture>
-</p>
-
-<br>
-
-## BONUS STAGE
-
-<p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:3D8BFF,35:9D4EFF,70:2EE6D6,100:FF4FD8&text=INSERT%20COIN%20TO%20CONTINUE&fontColor=120F26&fontSize=42&animation=fadeIn" alt="Banner animado de ola con degradado azul, morado, cyan y rosa, con el texto INSERT COIN TO CONTINUE" width="840">
-</p>
 
 <br>
 
