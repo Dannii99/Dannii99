@@ -173,9 +173,16 @@ const STYLE_BLOCK = `
   @keyframes blink { to { visibility: hidden; } }
   .scanlines { animation: flicker 6s linear infinite; }
   @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+  .bob { animation: bob 3s ease-in-out infinite; }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+  .sway { animation: sway 4s ease-in-out infinite; }
+  @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+  .twinkle { animation: twinkle 2.4s ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+  .steam { animation: rise 2.8s ease-out infinite; }
+  @keyframes rise { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 0.8; } 100% { transform: translateY(-18px); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) {
-    .blink { animation: none; }
-    .scanlines { animation: none; }
+    .blink, .scanlines, .bob, .sway, .twinkle, .steam { animation: none; }
   }
 `;
 
@@ -231,40 +238,93 @@ function buildHero(variant) {
 }
 
 // ---------------------------------------------------------------------------
-// ACHIEVEMENTS — unlocked milestones strip
+// BONUS STAGE — just-for-fun animated pixel office scene (no information,
+// purely decorative, same spirit as the contribution snake).
 // ---------------------------------------------------------------------------
-const ACHIEVEMENTS = [
-  { line1: "PLAYER", line2: "JOINED" },
-  { line1: "LEVEL UP", line2: "FINTECH" },
-  { line1: "SENIOR", line2: "UNLOCKED" },
-  { line1: "AI ARCHITECT", line2: "UNLOCKED" },
-];
-
-function buildAchievements(variant) {
+function buildOffice(variant) {
   const width = 840;
-  const height = 170;
-  const textColor = ink(variant);
-  const nodeY = 50;
-  const colWidth = width / ACHIEVEMENTS.length;
+  const height = 280;
+  const silhouette = variant === "dark" ? "#1C1B33" : "#D9D4F0";
+  const panel = variant === "dark" ? "#14132A" : "#E7E3FA";
+  const starColor = ink(variant);
+  const codeColors = [PALETTE.blue, PALETTE.purple, PALETTE.cyan];
 
-  const line = `<rect x="${colWidth / 2}" y="${nodeY}" width="${width - colWidth}" height="2" fill="${borderColor(variant)}"/>`;
+  const stars = [
+    [665, 55],
+    [690, 46],
+    [712, 70],
+    [736, 90],
+  ]
+    .map(
+      ([sx, sy], i) =>
+        `<rect class="twinkle" style="animation-delay:${i * 0.4}s" x="${sx}" y="${sy}" width="3" height="3" fill="${starColor}"/>`
+    )
+    .join("");
 
-  const nodes = ACHIEVEMENTS.map((item, i) => {
-    const cx = colWidth * i + colWidth / 2;
-    const accent = ACCENTS[i % ACCENTS.length];
-    const badge = glow(`<rect x="${cx - 10}" y="${nodeY - 10}" width="20" height="20" fill="${accent}"/>`);
-    const l1 = pixelTextCentered(item.line1, cx, 90, 2, textColor);
-    const l2 = pixelTextCentered(item.line2, cx, 112, 2, accentOrInk(variant, accent));
-    return badge + l1 + l2;
-  }).join("\n");
+  const window_ = [
+    `<rect x="640" y="30" width="140" height="90" fill="none" stroke="${borderColor(variant)}" stroke-width="3"/>`,
+    `<rect x="648" y="38" width="124" height="74" fill="${panel}"/>`,
+    glow(`<rect x="752" y="50" width="16" height="16" fill="${PALETTE.pink}"/>`),
+    stars,
+  ].join("\n");
 
-  const body = [line, nodes].join("\n");
+  const desk = [
+    `<rect x="60" y="210" width="720" height="16" fill="${silhouette}"/>`,
+    `<rect x="90" y="226" width="14" height="40" fill="${silhouette}"/>`,
+    `<rect x="736" y="226" width="14" height="40" fill="${silhouette}"/>`,
+  ].join("\n");
+
+  const chair = `<rect x="235" y="150" width="50" height="60" fill="${silhouette}"/>`;
+
+  const person = `<g class="bob">
+    <rect x="240" y="120" width="26" height="26" fill="${silhouette}"/>
+    <rect x="232" y="146" width="42" height="50" fill="${silhouette}"/>
+    <rect x="220" y="160" width="14" height="10" fill="${silhouette}"/>
+    <rect x="276" y="160" width="14" height="10" fill="${silhouette}"/>
+  </g>`;
+
+  const monitorX = 330;
+  const monitorY = 120;
+  const monitorW = 150;
+  const monitorH = 90;
+  const codeLines = [0, 1, 2]
+    .map((i) => {
+      const y = monitorY + 18 + i * 16;
+      return `<rect class="twinkle" style="animation-delay:${i * 0.6}s" x="${monitorX + 14}" y="${y}" width="${40 + i * 20}" height="4" fill="${codeColors[i % codeColors.length]}"/>`;
+    })
+    .join("");
+  const cursor = `<rect class="blink" x="${monitorX + 114}" y="${monitorY + 50}" width="6" height="10" fill="${PALETTE.cyan}"/>`;
+
+  const monitor = [
+    `<rect x="${monitorX - 6}" y="${monitorY - 6}" width="${monitorW + 12}" height="${monitorH + 12}" fill="${silhouette}"/>`,
+    `<rect x="${monitorX}" y="${monitorY}" width="${monitorW}" height="${monitorH}" fill="${panel}"/>`,
+    codeLines,
+    cursor,
+    `<rect x="${monitorX + monitorW / 2 - 20}" y="${monitorY + monitorH + 6}" width="40" height="10" fill="${silhouette}"/>`,
+  ].join("\n");
+
+  const cup = [
+    `<rect x="520" y="190" width="24" height="20" fill="${silhouette}"/>`,
+    `<rect x="544" y="194" width="8" height="10" fill="none" stroke="${silhouette}" stroke-width="2"/>`,
+    `<rect class="steam" style="animation-delay:0s" x="524" y="178" width="3" height="10" fill="${borderColor(variant)}"/>`,
+    `<rect class="steam" style="animation-delay:0.6s" x="532" y="178" width="3" height="10" fill="${borderColor(variant)}"/>`,
+    `<rect class="steam" style="animation-delay:1.2s" x="540" y="178" width="3" height="10" fill="${borderColor(variant)}"/>`,
+  ].join("\n");
+
+  const plant = `<g class="sway" style="transform-origin:700px 230px">
+    <rect x="690" y="210" width="20" height="20" fill="${silhouette}"/>
+    <rect x="694" y="190" width="4" height="22" fill="${PALETTE.cyan}"/>
+    <rect x="684" y="195" width="4" height="20" fill="${PALETTE.purple}"/>
+    <rect x="704" y="195" width="4" height="20" fill="${PALETTE.blue}"/>
+  </g>`;
+
+  const body = [window_, desk, chair, person, monitor, cup, plant].join("\n");
 
   return svgDocument({
     width,
     height,
     variant,
-    title: "Achievements unlocked: player joined, level up fintech, senior unlocked, AI architect unlocked",
+    title: "Escena pixel animada de oficina nocturna: Danny programando frente al monitor, café con vapor, planta y ventana con luna y estrellas",
     body,
   });
 }
@@ -329,7 +389,7 @@ for (const [name, def] of Object.entries(CATEGORY_ICONS)) {
 // ---------------------------------------------------------------------------
 for (const variant of ["dark", "light"]) {
   write("hero", variant, buildHero(variant));
-  write("achievements", variant, buildAchievements(variant));
+  write("office", variant, buildOffice(variant));
 }
 
 console.log("Done.");

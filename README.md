@@ -93,17 +93,17 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 
 <br>
 
-## ACHIEVEMENTS
+## BONUS STAGE
 
 <p align="center">
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/achievements-light.svg">
-  <img src="assets/achievements-dark.svg" alt="Logros desbloqueados: Player Joined (dev Angular), Level Up (banca y fintech), Senior Unlocked, Frontend AI Architect Unlocked" width="840">
+  <source media="(prefers-color-scheme: light)" srcset="assets/office-light.svg">
+  <img src="assets/office-dark.svg" alt="Escena pixel animada de oficina nocturna: Danny programando frente al monitor, con café, planta y ventana con estrellas" width="840">
 </picture>
 </p>
 
 <p align="center">
-<code>PLAYER JOINED · DEV ANGULAR</code> → <code>LEVEL UP · BANCA / FINTECH</code> → <code>SENIOR UNLOCKED</code> → <code>FRONTEND AI ARCHITECT UNLOCKED</code>
+Así se ve mi escritorio a las 2am. No significa nada, solo se veía bonito.
 </p>
 
 <br>
