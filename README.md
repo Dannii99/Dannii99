@@ -1,83 +1,110 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/GhostemaneUrs/GhostemaneUrs/master/resources/greetings.gif" align="center" style="width: 100%" />
-</div><br>
 
-<div style="display: inline_block">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img src="assets/hero-dark.svg" alt="Pantalla de título arcade: DANNY OSPINO, clase FRONTEND AI ARCHITECT, PRESS START parpadeando" width="840">
+</picture>
 
- <img align="right" style="width:16rem; height:auto" src="https://raw.githubusercontent.com/GhostemaneUrs/GhostemaneUrs/master/resources/coding.gif"/>
-
-- 🔭 I'm currently working with technologies JQuery and Angular 
-
-- 🌱 I'm currently deepening my knowledge in advanced Angular and React
-
-- ❓ I would like to learn how tests in Angular to improve the quality of my work
-
-- 👯 I’m looking to collaborate on Angular 6+ or ReactJs
-
-- ⚡ Fun fact: I like to make digital art and play video games in free time
-
-</div><br>
-
----
-
-<div align="center">
-  <a href="https://github.com/Dannii99"/>
-  <div style="display: flex; justify-content: space-around;">
-    <img width="46%" src="https://github-readme-stats.vercel.app/api?username=Dannii99&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-    <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Dannii99&theme=dracula"/>
-  </div>
-  </br>
-  <img width="40%"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dannii99&layout=compact&langs_count=5&theme=dracula"/>
-  </br></br>
- <!--  <img width="90%"  src="https://github-readme-stats.vercel.app/api/wakatime?username=Dannii99&langs_count=3&theme=dracula"/> -->
-</div>
-
----
-
-<div style="display: inline_block">
-  <img align="center" alt="Angular" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
-  <img align="center" alt="TypeScript" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-  <img align="center" alt="JQuery" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg">
-  <img align="center" alt="Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="NodeJs" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
-  <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-  <img align="right" alt="pic" height="150" style="border-radius:50px;" src="https://i.postimg.cc/vZBSw9b4/Avatar-Iphone.png"/>
-</div>
-
----
-
-<div>
-   <a href="https://www.linkedin.com/in/danny-ospino-82360b211/" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
-   </a>
-  <a href="https://wa.me/3016716998" target="_blank">
-   <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" target="_blank">
-  </a>
-  <a href = "mailto:dannii.ospino@gmail.com">
-   <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank">
-  </a>
-  <a href = "https://discord.gg/8Sjde86r">
-   <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank">
-  </a>
-
-![Snake animation](https://github.com/Dannii99/Dannii99/blob/output/github-contribution-grid-snake.svg)
-
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
-![Nodejs](https://img.shields.io/badge/-Nodejs-black?style=flat-square&logo=Node.js)
-![JQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jquery&logoColor=white)
-![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python)
-![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)
-![Java](https://img.shields.io/badge/-java-E34A86?style=flat-square&logo=java)
-![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
-![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
-![MySQL](https://img.shields.io/badge/-MySQL-black?style=flat-square&logo=mysql)
-![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
+Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agnósticos de agente.
 
 </div>
+
+<br>
+
+## QUESTS
+
+<table>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/precuenta-app"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=precuenta-app&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: precuenta-app" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/frontend-ai-arch"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=frontend-ai-arch&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: frontend-ai-arch" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/Monarca-Tasks"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=Monarca-Tasks&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: Monarca-Tasks" width="100%"/></a></td>
+</tr>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/my-portfolio"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=my-portfolio&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: my-portfolio" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/bold-transactions-dashboard"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=bold-transactions-dashboard&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: bold-transactions-dashboard" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/reactividad-signals"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=reactividad-signals&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: reactividad-signals" width="100%"/></a></td>
+</tr>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/pokemon-go"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=pokemon-go&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: pokemon-go" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/areadot-radiography"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=areadot-radiography&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: areadot-radiography" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/yupy-tv"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=yupy-tv&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: yupy-tv" width="100%"/></a></td>
+</tr>
+</table>
+
+<br>
+
+## INVENTORY
+
+<details open>
+<summary><img src="assets/icon-frontend.svg" width="16" height="16" alt=""> &nbsp;<strong>FRONTEND</strong></summary>
+<br>
+
+<img src="https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white" alt="Angular" height="28"> <img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript" height="28"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript" height="28"> <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5" height="28"> <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css&logoColor=white" alt="CSS3" height="28"> <img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass" height="28"> <img src="https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=white" alt="jQuery" height="28"> <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black" alt="React" height="28"> <img src="https://img.shields.io/badge/Vue.js-4FC08D?logo=vuedotjs&logoColor=white" alt="Vue.js" height="28"> <img src="https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap" height="28"> <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind CSS" height="28">
+
+</details>
+
+<details>
+<summary><img src="assets/icon-state.svg" width="16" height="16" alt=""> &nbsp;<strong>ESTADO &amp; REACTIVIDAD</strong></summary>
+<br>
+
+<img src="https://img.shields.io/badge/Signals-2EE6D6?logoColor=white" alt="Signals" height="28"> <img src="https://img.shields.io/badge/NgRx-BA2BD2?logo=ngrx&logoColor=white" alt="NgRx" height="28"> <img src="https://img.shields.io/badge/RxJS-B7178C?logo=reactivex&logoColor=white" alt="RxJS" height="28">
+
+</details>
+
+<details>
+<summary><img src="assets/icon-ai.svg" width="16" height="16" alt=""> &nbsp;<strong>IA &amp; TOOLING</strong></summary>
+<br>
+
+<img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" alt="Git" height="28"> <img src="https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white" alt="Bash" height="28"> <img src="https://img.shields.io/badge/VS_Code-007ACC?logo=visualstudiocode&logoColor=white" alt="VS Code" height="28"> <img src="https://img.shields.io/badge/OpenSpec-9D4EFF?logoColor=white" alt="OpenSpec" height="28"> <img src="https://img.shields.io/badge/Agent_Skills-3D8BFF?logoColor=white" alt="Agent Skills" height="28"> <img src="https://img.shields.io/badge/Spec--Driven_Development-FF4FD8?logoColor=white" alt="Spec-Driven Development" height="28">
+
+</details>
+
+<details>
+<summary><img src="assets/icon-testing.svg" width="16" height="16" alt=""> &nbsp;<strong>TESTING &amp; CALIDAD</strong></summary>
+<br>
+
+<img src="https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white" alt="Playwright" height="28"> <img src="https://img.shields.io/badge/Accesibilidad_WCAG-3D8BFF?logoColor=white" alt="Accesibilidad WCAG" height="28"> <img src="https://img.shields.io/badge/Clean_Code-9D4EFF?logoColor=white" alt="Clean Code" height="28">
+
+</details>
+
+<br>
+
+## SCOREBOARD
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=Dannii99&show_icons=true&count_private=true&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&icon_color=9D4EFF&text_color=F1EEFB&border_color=3A3570" alt="Estadísticas de GitHub de Dannii99" width="48%" />
+<img src="https://streak-stats.demolab.com/?user=Dannii99&hide_border=true&background=0B0B18&ring=3D8BFF&fire=FF4FD8&currStreakLabel=2EE6D6&sideLabels=9D4EFF&currStreakNum=F1EEFB&sideNums=F1EEFB&dates=9D4EFF&border=3A3570" alt="Racha de contribuciones de Dannii99" width="48%" />
+</p>
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dannii99&layout=compact&hide_border=true&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570" alt="Lenguajes más usados por Dannii99" width="60%" />
+</p>
+
+<br>
+
+## REPLAY
+
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-light.svg">
+  <img src="https://raw.githubusercontent.com/Dannii99/Dannii99/output/github-contribution-grid-snake-dark.svg" alt="Animación de la serpiente recorriendo el mapa de contribuciones de GitHub" width="840" />
+</picture>
+</p>
+
+<br>
+
+## BONUS STAGE
+
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:3D8BFF,35:9D4EFF,70:2EE6D6,100:FF4FD8&text=BONUS%20STAGE&fontColor=120F26&fontSize=60&animation=fadeIn" alt="Banner animado de ola con degradado azul, morado, cyan y rosa, con el texto BONUS STAGE" width="840">
+</p>
+
+<br>
+
+## SAVE POINT
+
+<p align="center">
+<a href="https://www.linkedin.com/in/danny-ospino-82360b211/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:dannii.ospino@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+<a href="https://github.com/Dannii99" target="_blank"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</p>
