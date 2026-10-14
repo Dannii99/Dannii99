@@ -96,7 +96,7 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 ## BONUS STAGE
 
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:3D8BFF,35:9D4EFF,70:2EE6D6,100:FF4FD8&text=BONUS%20STAGE&fontColor=120F26&fontSize=60&animation=fadeIn" alt="Banner animado de ola con degradado azul, morado, cyan y rosa, con el texto BONUS STAGE" width="840">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:3D8BFF,35:9D4EFF,70:2EE6D6,100:FF4FD8&text=INSERT%20COIN%20TO%20CONTINUE&fontColor=120F26&fontSize=42&animation=fadeIn" alt="Banner animado de ola con degradado azul, morado, cyan y rosa, con el texto INSERT COIN TO CONTINUE" width="840">
 </p>
 
 <br>

@@ -11,7 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Snake Animation — themed to match the profile's neon blue/purple/cyan/pink palette
-      - uses: Platane/snk@master
+      # Pinned to v3: @master resolves to an older revision that doesn't support
+      # the multi-output `outputs` input (only `svg_out_path`/`gif_out_path`),
+      # which silently no-ops and leaves dist/ empty.
+      - uses: Platane/snk@v3
         id: snake-gif
         with:
           github_user_name: Dannii99
