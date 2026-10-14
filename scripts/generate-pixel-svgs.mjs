@@ -235,53 +235,6 @@ function buildHero(variant) {
 }
 
 // ---------------------------------------------------------------------------
-// QUESTS — project cartridges, one per row, full width
-// ---------------------------------------------------------------------------
-const QUESTS = [
-  { slug: "quest-ai-arch", name: "FRONTEND AI ARCH", chips: ["SH", "MD", "AI"] },
-  { slug: "quest-bold-dashboard", name: "BOLD DASHBOARD", chips: ["NG", "TS", "TW"] },
-  { slug: "quest-precuenta", name: "PRECUENTA APP", chips: ["NG", "TS"] },
-  { slug: "quest-portfolio", name: "MY PORTFOLIO", chips: ["NX", "TS"] },
-];
-
-function buildQuest(quest, variant, accentColor) {
-  const width = 840;
-  const height = 260;
-  const textColor = ink(variant);
-  const cx = width / 2;
-
-  const chipWidth = 90;
-  const chipHeight = 40;
-  const chipGap = 20;
-  const totalChipsWidth = quest.chips.length * chipWidth + (quest.chips.length - 1) * chipGap;
-  let chipX = cx - totalChipsWidth / 2;
-  const chipRects = quest.chips
-    .map((label) => {
-      const rect = `<rect x="${chipX}" y="175" width="${chipWidth}" height="${chipHeight}" fill="${accentColor}"/>`;
-      const label2 = pixelTextCentered(label, chipX + chipWidth / 2, 185, 3, CHIP_INK);
-      chipX += chipWidth + chipGap;
-      return rect + label2;
-    })
-    .join("\n");
-
-  const body = [
-    `<rect x="20" y="20" width="${width - 40}" height="12" fill="${accentColor}"/>`,
-    glow(pixelTextCentered(quest.name, cx, 75, 5, textColor)),
-    `<rect x="${cx - 160}" y="145" width="320" height="2" fill="${accentColor}"/>`,
-    chipRects,
-    `<rect x="12" y="12" width="${width - 24}" height="${height - 24}" fill="none" stroke="${accentColor}" stroke-width="3"/>`,
-  ].join("\n");
-
-  return svgDocument({
-    width,
-    height,
-    variant,
-    title: `Quest cartridge: ${quest.name}`,
-    body,
-  });
-}
-
-// ---------------------------------------------------------------------------
 // ACHIEVEMENTS — unlocked milestones strip
 // ---------------------------------------------------------------------------
 const ACHIEVEMENTS = [
@@ -411,9 +364,6 @@ for (const [name, def] of Object.entries(CATEGORY_ICONS)) {
 // ---------------------------------------------------------------------------
 for (const variant of ["dark", "light"]) {
   write("hero", variant, buildHero(variant));
-  QUESTS.forEach((quest, i) => {
-    write(quest.slug, variant, buildQuest(quest, variant, ACCENTS[i % ACCENTS.length]));
-  });
   write("achievements", variant, buildAchievements(variant));
   write("save-point", variant, buildSavePoint(variant));
 }

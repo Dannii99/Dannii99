@@ -13,43 +13,23 @@ Senior Frontend Developer (Angular) construyendo flujos de desarrollo con IA agn
 
 ## QUESTS
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/quest-ai-arch-light.svg">
-  <img src="assets/quest-ai-arch-dark.svg" alt="Cartucho de misión: Frontend AI Arch" width="840">
-</picture>
-
-**[FRONTEND AI ARCH](https://github.com/Dannii99/frontend-ai-arch)** · IA agnóstica de agente, Spec-Driven Development.
-`Shell` · `OpenSpec` · `Agent Skills`
-
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/quest-bold-dashboard-light.svg">
-  <img src="assets/quest-bold-dashboard-dark.svg" alt="Cartucho de misión: Bold Dashboard" width="840">
-</picture>
-
-**[BOLD DASHBOARD](https://github.com/Dannii99/bold-transactions-dashboard)** · Dashboard fintech: transacciones en vivo.
-`Angular 20` · `PrimeNG` · `Tailwind CSS`
-
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/quest-precuenta-light.svg">
-  <img src="assets/quest-precuenta-dark.svg" alt="Cartucho de misión: Precuenta App" width="840">
-</picture>
-
-**[PRECUENTA APP](https://github.com/Dannii99/precuenta-app)** · Captura precios con cámara, mira crecer tu total.
-`Angular` · `TypeScript`
-
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="assets/quest-portfolio-light.svg">
-  <img src="assets/quest-portfolio-dark.svg" alt="Cartucho de misión: My Portfolio" width="840">
-</picture>
-
-**[MY PORTFOLIO](https://github.com/Dannii99/my-portfolio)** · Portafolio personal en Next.js.
-`Next.js` · `TypeScript`
+<table>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/precuenta-app"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=precuenta-app&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: precuenta-app" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/frontend-ai-arch"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=frontend-ai-arch&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: frontend-ai-arch" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/Monarca-Tasks"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=Monarca-Tasks&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: Monarca-Tasks" width="100%"/></a></td>
+</tr>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/my-portfolio"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=my-portfolio&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: my-portfolio" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/bold-transactions-dashboard"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=bold-transactions-dashboard&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: bold-transactions-dashboard" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/reactividad-signals"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=reactividad-signals&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: reactividad-signals" width="100%"/></a></td>
+</tr>
+<tr>
+<td width="33%"><a href="https://github.com/Dannii99/pokemon-go"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=pokemon-go&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: pokemon-go" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/areadot-radiography"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=areadot-radiography&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: areadot-radiography" width="100%"/></a></td>
+<td width="33%"><a href="https://github.com/Dannii99/yupy-tv"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Dannii99&repo=yupy-tv&bg_color=0B0B18&title_color=2EE6D6&text_color=F1EEFB&border_color=3A3570&icon_color=9D4EFF" alt="Repo: yupy-tv" width="100%"/></a></td>
+</tr>
+</table>
 
 <br>
 
